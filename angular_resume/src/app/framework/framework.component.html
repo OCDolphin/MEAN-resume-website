@@ -1,45 +1,37 @@
 <nav class="navbar fixed-top navbar-expand-md navbar-light">
     <div class="container">
+        <!-- Home Button -->
         <a routerLink="" routerLinkActive="active"class="navbar-brand">Your Name</a>
         <button type="button" data-toggle="collapse" data-target="#navbarMain"class="navbar-toggler">
             <span class="navbar-toggler-icon"></span>
         </button>
+        <!-- Collapseable Navigation Buttons -->
         <div id="navbarMain" class="navbar-collapse collapse">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a routerLink="about" routerLinkActive="active" class="nav-link">About</a>
-                </li>
-            </ul>
             <ul class="navbar-nav justify-content-end">
-                <!-- <li class="nav-item" routerLinkActive="active">
-                    <a routerLink="login" class="nav-link" *ngIf="!isLoggedIn()">
-                    Sign in</a>
+                <!-- Education Page -->
+                <li class="nav-item" routerLinkActive="active">
+                    <a routerLink="education" class="nav-link">Education</a>
                 </li>
-                <li class="nav-item dropdown" routerLinkActive="active"
-                *ngIf="isLoggedIn()">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown">
-                    {{ getUsername() }}
-                    </a>
-                    <div class="dropdown-menu">
-                    <a class="dropdown-item" (click)="doLogout()">Logout</a>
-                    </div>
-                </li> -->
+                <!-- Experience Page -->
+                <li class="nav-item" routerLinkActive="active">
+                    <a routerLink="experience" class="nav-link">Experience</a>
+                </li>
+                <!-- Projects -->
+                <li class="nav-item" routerLinkActive="active">
+                    <a routerLink="projects" class="nav-link">Projects</a>
+                </li>                                
             </ul>
         </div>
     </div>
 </nav>
 <div class="container content">
-    <router-outlet>
-
-
-    
-    
-    </router-outlet>
-    
+    <!-- Content to be displayed by the router -->
+    <router-outlet></router-outlet>
+    <!-- Footer I guess -->
     <footer>
         <div class="row">
             <div class="col-12">
-                <small>&copy; Getting Mean - Simon Holmes/Clive Harber 2018</small>
+                <small> A resume website, by Your Name</small>
             </div>
         </div>
     </footer>
