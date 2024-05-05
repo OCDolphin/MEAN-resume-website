@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-projects',
@@ -6,9 +7,20 @@ import { Component } from '@angular/core';
   styleUrl: './projects.component.css'
 })
 export class ProjectsComponent {
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  ngOnInit() {
+  projs: any[] = [];
+
+  ngOnInit(): void {
+    this.http.get<any[]>('http://localhost:3000/projects').subscribe(
+      (data: any[]) => {
+        this.projs = data;
+        console.log('Project data:', this.projs); // Log the fetched user data
+      },
+      (error) => {
+        console.error('Error fetching users:', error);
+      }
+    );
   }
 
   public pageContent = {

@@ -5,11 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FrameworkComponent } from './framework/framework.component';
 import { EducationComponent } from './education/education.component';
-// Routing Module to implement navigation
-import { RouterModule } from '@angular/router';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ExperienceComponent } from './experience/experience.component';
 import { ProjectsComponent } from './projects/projects.component';
+// Routing Module to implement navigation
+import { RouterModule } from '@angular/router';
+
+// Import HttpClientModule
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -41,7 +44,9 @@ import { ProjectsComponent } from './projects/projects.component';
         path: 'projects',
         component: ProjectsComponent
       },
-    ])
+    ]),
+    //API httpClient import
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [FrameworkComponent]
